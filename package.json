@@ -21,7 +21,8 @@
     "react-native-screens": "^3.31.1",
     "react-navigation": "^4.4.4",
     "react-navigation-bottom-tabs": "^1.0.2",
-    "react-navigation-stack": "^2.10.4"
+    "react-navigation-stack": "^2.10.4",
+    "@expo/vector-icons": "^14.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

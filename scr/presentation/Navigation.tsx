@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
+import { MaterialIcons } from '@expo/vector-icons';
 import 'react-native-gesture-handler';
 
 // Imports Propios
@@ -21,8 +22,6 @@ export default function Navigation() {
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Tabs">
           <Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />
-          <Stack.Screen name="AddRecipeScr" component={AddRecipe} />
-          <Stack.Screen name="ListRecipeScr" component={ListRecipe} />
         </Stack.Navigator>
       </NavigationContainer>
     </RegistroContext.Provider>
@@ -32,9 +31,30 @@ export default function Navigation() {
 const Tabs = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="HomeScr" component={Home} />
-      <Tab.Screen name="AddRecipeScr" component={AddRecipe} />
-      <Tab.Screen name="ListRecipeScr" component={ListRecipe} />
+      <Tab.Screen name="Home" component={Home} 
+        options={{
+        tabBarLabel: 'Home',
+        tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name='home' color='grey' size={20} />
+          ),
+        tabBarActiveTintColor: '#000000',
+        }} />
+      <Tab.Screen name="Formulario" component={AddRecipe}  
+        options={{
+        tabBarLabel: 'Formulario',
+        tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name='feed' color='grey' size={20} />
+          ),
+        tabBarActiveTintColor: '#000000',
+        }} />
+      <Tab.Screen name="Lista" component={ListRecipe} 
+        options={{
+        tabBarLabel: 'Formulario',
+        tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name='format-list-numbered' color='grey' size={20} />
+          ),
+        tabBarActiveTintColor: '#000000',
+        }} />
     </Tab.Navigator>
   );
 };
