@@ -10,11 +10,12 @@ import RegistroContext from './GloblaContext';
 import Home from './Home';
 import AddRecipe from './AddRecipe';
 import ListRecipe from './ListRecipe';
+import SearchRecipeSrc from './SearchRecipe';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-export default function Navigation() {
+export default function Navigation( { navigation } ) {
   const [registros, setRegistros] = useState([]);
 
   return (

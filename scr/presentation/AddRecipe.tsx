@@ -1,9 +1,9 @@
 import React, {useState, useContext } from 'react';
-import {View,Text,TextInput,Button,Image,FlatList,Alert} from 'react-native';
+import {View,Text,TextInput,Button,Image,Alert} from 'react-native';
 import RegistroContext from './GloblaContext';
 import styles from '../css/styles';
 
-export default function AddRecipe() {
+export default function AddRecipe( { navigation } ) {
   const [nombreReceta, setNombreReceta] = useState('');
   const [ingrediente, setIngrediente] = useState('');
   const [recipes, setRecipes] = useState([]);
